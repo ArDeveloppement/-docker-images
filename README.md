@@ -6,17 +6,17 @@ Uses image **nginx-proxy** from [jwilder](https://github.com/jwilder/nginx-proxy
 
 The reverse proxy service must be launch independamently at the first time, with the command
 
-  $ docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro --name reverse-proxy --net=arconnectapi_default jwilder/nginx-proxy
+    $ docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro --name reverse-proxy --net=arconnectapi_default jwilder/nginx-proxy
 
 ### DNS and dev environment
 
 To be able to use domain names in dev environment, you need to install **dnsmasq**
 
-  $ sudo apt-get install dnsmasq
+    $ sudo apt-get install dnsmasq
 
 Change its configuration file to add the global domain name of the application
 
-  $ sudo vim /etc/dnsmasq.conf
+    $ sudo vim /etc/dnsmasq.conf
 
 Add these entries
 
@@ -29,7 +29,7 @@ address=/arconnect.dev/127.0.0.1
 ```
 And restart the service
 
-  $ sudo service dnsmasq restart
+    $ sudo service dnsmasq restart
 
 ## makefile
 
