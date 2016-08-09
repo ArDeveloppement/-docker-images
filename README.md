@@ -36,8 +36,8 @@ And restart the service
 ### Evironment variables
 
 variable|dev|preprod|prod|description
---------|-----------|----|-----------
-`PROJET_ENV`|dev||preprod|prod|Platform environment. Used to run `compose` on the right one
+--------|---|-------|----|-----------
+`PROJET_ENV`|dev|preprod|prod|Platform environment. Used to run `compose` on the right one
 `SYMFONY_ENV`|dev|prod|prod|Symfony environment
 
 ## PHP 7 migration
