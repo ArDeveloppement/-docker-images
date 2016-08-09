@@ -9,9 +9,6 @@ RUN apt-get update -qq && apt-get install -qqy \
         libicu-dev \
         libmcrypt-dev \
         wget \
-        php5-apcu \
-        php5-curl \
-        php5-mysqlnd \
 
     && docker-php-ext-configure intl \
     && docker-php-ext-install -j$(nproc) \
@@ -23,6 +20,9 @@ RUN apt-get update -qq && apt-get install -qqy \
        mbstring \
        opcache \
        zip \
+
+    && pecl install apcu-4.0.11 \
+    && docker-php-ext-enable apcu --ini-name 10-docker-php-ext-apcu.ini \
 
     && apt-get purge zlib1g-dev libicu-dev libmcrypt-dev -yy \
     && apt-get clean \
