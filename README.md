@@ -7,6 +7,7 @@ Uses image **nginx-proxy** from [jwilder](https://github.com/jwilder/nginx-proxy
 The reverse proxy service must be launch independamently at the first time, with the command
 
     $ docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro --name reverse-proxy --net=arconnectapi_default jwilder/nginx-proxy
+    $ docker network connect arconnectstatic_default reverse-proxy
 
 ### DNS and dev environment
 
