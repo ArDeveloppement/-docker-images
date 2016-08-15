@@ -17,13 +17,14 @@ RUN apt-get update -qq && apt-get install -qqy \
     && echo 'alias ll="ls -lah --color=auto"' >> /etc/bash.bashrc \
     && rm -rf /var/lib/apt/lists/*
 
-# Nginx configuration
-RUN rm /etc/nginx/nginx.conf
-COPY conf/nginx.conf /etc/nginx/nginx.conf
+# Nginx and sites configuration
+RUN rm /etc/nginx/nginx.conf \
+  && rm /etc/nginx/sites-enabled/default
 
-# Default site configuration
-RUN rm /etc/nginx/sites-enabled/default
+COPY conf/nginx.conf /etc/nginx/nginx.conf
 COPY conf/default.conf /etc/nginx/sites-available/default.conf
+COPY conf/silex.conf /etc/nginx/sites-available/silex.conf
+
 RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
 
 # Sources
@@ -33,7 +34,7 @@ VOLUME ["/var/log/nginx"]
 
 EXPOSE 80 443
 
-#COPY script/start.sh /root/start.sh
-#RUN chmod +x /root/start.sh
+COPY scripts/start.sh /root/start.sh
+RUN chmod +x /root/start.sh
 
-CMD ["nginx"]
+CMD ["/root/start.sh","nginx"]
