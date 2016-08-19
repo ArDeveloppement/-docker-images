@@ -11,6 +11,7 @@ RUN apt-get update -qq && apt-get install -qqy \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
         libpng12-dev \
+	libpq-dev \
         wget \
 
     && docker-php-ext-install -j$(nproc) \
@@ -24,6 +25,7 @@ RUN apt-get update -qq && apt-get install -qqy \
        intl \
        pdo \
        pdo_mysql \
+       pdo_pgsql \
        mbstring \
        opcache \
        zip \
@@ -32,7 +34,7 @@ RUN apt-get update -qq && apt-get install -qqy \
     && pecl install apcu-4.0.11 \
     && docker-php-ext-enable apcu --ini-name 10-docker-php-ext-apcu.ini \
 
-    && apt-get purge zlib1g-dev libicu-dev libmcrypt-dev libfreetype6-dev libjpeg62-turbo-dev libpng12-dev -yy \
+    && apt-get purge zlib1g-dev libicu-dev libmcrypt-dev libfreetype6-dev libjpeg62-turbo-dev libpng12-dev libpq-dev -yy \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
