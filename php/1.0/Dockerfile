@@ -4,6 +4,8 @@ FROM php:5.6.24-fpm
 RUN apt-get update -qq && apt-get install -qqy \
         apt-utils \
         mysql-client \
+        postgresql-client-common \
+        postgresql-client \
         sudo \
         zlib1g-dev \
         libicu-dev \
