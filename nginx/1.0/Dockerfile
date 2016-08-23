@@ -13,7 +13,6 @@ RUN apt-get update -qq && apt-get install -qqy \
     nginx \
     ca-certificates \
     gettext-base \
-    logrotate \
     && echo "Europe/Paris" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata \
     && echo 'alias ll="ls -lah --color=auto"' >> /etc/bash.bashrc \
     && rm -rf /var/lib/apt/lists/*
