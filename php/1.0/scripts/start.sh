@@ -38,8 +38,12 @@ symfony_cache_clear_alias() {
     echo "alias sfcc='sudo -E -u www-data app/console ca:cl'" >> ~/.bashrc
 }
 
+symfony_catch_workers_output() {
+    sed -i "s/;catch_workers_output/catch_workers_output/g" /usr/local/etc/php-fpm.d/www.conf
+}
 
 symfony_env_variables
+symfony_catch_workers_output
 symfony_cache_clear_alias
 
 php-fpm
