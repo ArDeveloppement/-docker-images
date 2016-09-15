@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM debian:jessie
 
 MAINTAINER AR Développement <ardeveloppement@cospirit.com>
 
