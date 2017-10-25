@@ -1,19 +1,18 @@
-FROM alpine:3.6
+FROM alpine:3.5
 
 MAINTAINER CoSpirit Connect <support-arconnect@cospirit.com>
 
 ENV RCLONE_VERSION=current
-ENV RCLONE_ARCH=amd64
-ENV RCLONE_BUILD_PACKAGES="fuse openssl"
+ENV ARCH=amd64
 
-RUN apk add --no-cache --update ca-certificates fuse openssl \
-    && cd /tmp \
-    && wget -q https://downloads.rclone.org/rclone-${RCLONE_VERSION}-linux-${RCLONE_ARCH}.zip \
-    && unzip /tmp/rclone-${RCLONE_VERSION}-linux-${RCLONE_ARCH}.zip \
-    && mv /tmp/rclone-*-linux-${ARCH}/rclone /usr/bin \
-    && apk del fuse openssl \
-    && rm -r /tmp/rclone* \
+RUN apk update \
+	&& apk -U add --no-cache ca-certificates fuse openssl \
     && rm -rf /var/cache/apk/* \
+    && cd /tmp \
+    && wget -q https://downloads.rclone.org/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip \
+    && unzip /tmp/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip \
+    && mv /tmp/rclone-*-linux-${ARCH}/rclone /usr/bin \
+    && rm -r /tmp/rclone* \
     && addgroup rclone \
     && adduser -h /config -s /bin/ash -G rclone -D rclone
 
