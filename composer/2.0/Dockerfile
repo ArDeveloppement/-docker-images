@@ -10,6 +10,7 @@ ARG USER=dummy
 
 ENV COMPOSER_ALLOW_SUPERUSER 0
 ENV COMPOSER_HOME /home/$USER/.composer
+ENV COMPOSER_CACHE_DIR /tmp/composer
 
 RUN addgroup -g $GID $GROUP
 RUN adduser -D -u $UID -h /home/$USER -s /bin/ash -G $GROUP $USER
@@ -17,7 +18,8 @@ RUN adduser -D -u $UID -h /home/$USER -s /bin/ash -G $GROUP $USER
 USER $USER
 
 RUN mkdir -p $COMPOSER_HOME
+RUN mkdir -p $COMPOSER_CACHE_DIR
 
-VOLUME $COMPOSER_HOME
+VOLUME $COMPOSER_CACHE_DIR
 
 RUN composer global require hirak/prestissimo sllh/composer-versions-check pyrech/composer-changelogs
