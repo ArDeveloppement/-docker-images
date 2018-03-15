@@ -27,8 +27,9 @@ Add these entries
 # The example below send any host in double-click.net to a local
 # web-server.
 address=/localhost/127.0.0.1
-address=/arconnect.dev/127.0.0.1
+address=/arconnect.local/127.0.0.1
 ```
+
 And restart the service
 
     $ sudo service dnsmasq restart
