@@ -42,14 +42,3 @@ variable|dev|preprod|prod|description
 --------|---|-------|----|-----------
 `PROJET_ENV`|dev|preprod|prod|Platform environment. Used to run `compose` on the right one
 `SYMFONY_ENV`|dev|prod|prod|Symfony environment
-
-## PHP 7 migration
-
-To update the PHP image to **PHP 7**, you need to change parent image tag and APC install in the Dockerfile.
-
-```
-&& pecl install apcu \
-&& pecl install apcu_bc-1.0.3 \
-&& docker-php-ext-enable apcu --ini-name 10-docker-php-ext-apcu.ini \
-&& docker-php-ext-enable apc --ini-name 20-docker-php-ext-apc.ini \
-```
