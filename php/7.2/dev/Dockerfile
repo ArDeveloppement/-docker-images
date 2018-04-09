@@ -3,7 +3,7 @@ FROM ardeveloppement/php:7.2
 # https://medium.com/@pablofmorales/xdebug-with-docker-and-phpstorm-786da0d0fad2
 ENV XDEBUGINI_PATH=/usr/local/etc/php/conf.d/xdebug.ini
 
-RUN yes | pecl install xdebug-2.5.5 && \
+RUN yes | pecl install xdebug-2.6 && \
     docker-php-ext-enable xdebug && \
     echo "zend_extension="`find /usr/local/lib/php/extensions/ -iname 'xdebug.so'` > $XDEBUGINI_PATH
 
