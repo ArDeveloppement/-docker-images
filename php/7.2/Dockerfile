@@ -13,7 +13,7 @@ RUN apt-get update -qq && apt-get install -qqy \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
         libpng12-dev \
-	libpq-dev \
+	    libpq-dev \
         wget \
 
     && docker-php-ext-install -j$(nproc) \
@@ -33,8 +33,8 @@ RUN apt-get update -qq && apt-get install -qqy \
        zip \
        gd \
 
-    && pecl install apcu \
-    && pecl install apcu_bc-1.0.3 \
+    && pecl install apcu-5.1.11 \
+    && pecl install apcu_bc-1.0.4 \
     && docker-php-ext-enable apcu --ini-name 10-docker-php-ext-apcu.ini \
     && docker-php-ext-enable apc --ini-name 20-docker-php-ext-apc.ini \
 
