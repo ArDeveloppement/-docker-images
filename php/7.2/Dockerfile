@@ -87,4 +87,4 @@ COPY conf/php.ini /usr/local/etc/php/php.ini
 COPY scripts/start.sh /root/start.sh
 RUN chmod +x /root/start.sh
 
-CMD ["/bin/bash", "/root/start.sh"]
+CMD ["php-fpm"]
