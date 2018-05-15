@@ -2,7 +2,8 @@
 [![Docker Layers](https://images.microbadger.com/badges/image/ardeveloppement/nginx.svg)][microbadger]
 [![Docker Build Status](https://img.shields.io/docker/build/ardeveloppement/nginx.svg)][dockerstore]
 
-* `latest`, `1.1` [(nginx/1.1/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/nginx/1.1/Dockerfile)
+* `latest`, `1.1.1` [(nginx/1.1.1/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/nginx/1.1/Dockerfile)
+* `1.1.1` [(nginx/1.1.1/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/nginx/1.1.1/Dockerfile)
 * `1.1` [(nginx/1.1/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/nginx/1.1/Dockerfile)
 * `1.0` [(nginx/1.0/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/nginx/1.0/Dockerfile)
 
