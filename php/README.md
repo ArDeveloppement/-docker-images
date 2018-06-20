@@ -5,6 +5,7 @@
 * `latest`, `1.1` [(Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/php/1.1/Dockerfile)
 * `1.0` [(Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/php/1.0/Dockerfile)
 * `1.1` [(Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/php/1.1/Dockerfile)
+* `7.2-1` [(Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/php/7.2-1/Dockerfile)
 * `7.2` [(Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/php/7.2/Dockerfile), `7.2-dev` [(Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/php/7.2/dev/Dockerfile) (PHP 7)
 
 
