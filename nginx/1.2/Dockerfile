@@ -38,4 +38,6 @@ RUN chmod +x /root/start.sh
 
 ENTRYPOINT ["/root/start.sh"]
 
+STOPSIGNAL SIGTERM
+
 CMD ["nginx", "-g", "daemon off;"]
