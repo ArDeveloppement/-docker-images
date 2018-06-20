@@ -88,4 +88,9 @@ RUN apk del .build-deps \
 
 COPY conf/php.ini /usr/local/etc/php/php.ini
 
+COPY scripts/start.sh /root/start.sh
+RUN chmod +x /root/start.sh
+
+ENTRYPOINT ["/root/start.sh"]
+
 CMD ["php-fpm"]
