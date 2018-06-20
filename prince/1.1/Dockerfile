@@ -7,7 +7,7 @@ RUN apk add --no-cache \
 WORKDIR /srv
 
 # Prince
-ENV PRINCE_VERSION 11.3
+ENV PRINCE_VERSION 11.4
 RUN wget -qO- https://www.princexml.com/download/prince-${PRINCE_VERSION}-alpine3.7-x86_64.tar.gz \
         | tar xvz --strip-components=1 \
     && printf "/usr\n" | ./install.sh \
