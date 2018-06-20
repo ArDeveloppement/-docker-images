@@ -31,6 +31,8 @@ RUN apk add --no-cache --virtual .persistent-deps \
     # zip extension
     libzip-dev \
     zip
+    zip \
+    make
 
 # Install Requirements
 RUN set -xe \
