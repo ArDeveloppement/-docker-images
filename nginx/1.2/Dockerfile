@@ -36,4 +36,6 @@ EXPOSE 80 443
 COPY scripts/start.sh /root/start.sh
 RUN chmod +x /root/start.sh
 
-CMD ["/root/start.sh","nginx"]
+ENTRYPOINT ["/root/start.sh"]
+
+CMD ["nginx"]

@@ -10,4 +10,4 @@ else
   echo "SYMFONY PROJECT AND NGINX CONF (Nothing to do because default file is for SF)"
 fi
 
-exec $*
+exec "$@"
