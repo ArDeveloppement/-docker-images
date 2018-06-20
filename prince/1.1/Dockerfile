@@ -1,33 +1,27 @@
-FROM debian:8-slim
+FROM alpine:3.7
 
 # Dependencies
-RUN apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade \
-    && DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends install \
-        wget ca-certificates
+RUN apk add --no-cache \
+        libxml2 pixman tiff giflib libpng lcms2 libjpeg-turbo libcurl fontconfig freetype libgomp
 
 WORKDIR /srv
 
 # Prince
-ENV PRINCE_VERSION  11.3
-ENV PRINCE_REVISION 1
-RUN wget https://www.princexml.com/download/prince_${PRINCE_VERSION}-${PRINCE_REVISION}_debian8.0_amd64.deb \
-    && dpkg --force-all --install prince_${PRINCE_VERSION}-${PRINCE_REVISION}_debian8.0_amd64.deb \
-    && DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends -f install \
-    && rm -f prince_${PRINCE_VERSION}-${PRINCE_REVISION}_debian8.0_amd64.deb
-
-# Dropbear
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends -f install \
-        dropbear
-
-# Cleanup
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y purge \
-        wget ca-certificates \
-    && DEBIAN_FRONTEND=noninteractive apt-get -y --purge autoremove \
-    && rm -rf /var/lib/apt/lists/*
+ENV PRINCE_VERSION 11.3
+RUN wget -qO- https://www.princexml.com/download/prince-${PRINCE_VERSION}-alpine3.7-x86_64.tar.gz \
+        | tar xvz --strip-components=1 \
+    && printf "/usr\n" | ./install.sh \
+    && rm -Rf *
 
 # User
-RUN adduser --disabled-password --gecos "" prince \
+RUN adduser -D -g "" prince \
     && passwd -d -u prince
 
-CMD ["bash"]
+# Dropbear
+# See: https://bugs.alpinelinux.org/issues/5075
+RUN apk add --no-cache \
+        dropbear \
+    && mkdir -p /etc/dropbear \
+    && touch /var/log/lastlog
+
+CMD ["/bin/sh"]
