@@ -8,6 +8,5 @@
 * `7.2-1` [(Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/php/7.2-1/Dockerfile)
 * `7.2` [(Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/php/7.2/Dockerfile), `7.2-dev` [(Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/php/7.2/dev/Dockerfile) (PHP 7)
 
-
 [microbadger]: https://microbadger.com/images/ardeveloppement/php
 [dockerstore]: https://store.docker.com/community/images/ardeveloppement/php
