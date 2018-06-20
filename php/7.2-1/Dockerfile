@@ -30,7 +30,6 @@ RUN apk add --no-cache --virtual .persistent-deps \
     libpng-dev \
     # zip extension
     libzip-dev \
-    zip
     zip \
     make \
     # Lightweight ssh client to ensure low-cost services communications
