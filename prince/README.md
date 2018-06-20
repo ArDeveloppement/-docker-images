@@ -26,5 +26,12 @@ Client
 ssh prince@localhost -p 7762 -- prince --help
 ```
 
+## License
+
+Set a `PRINCE_LICENSE` environment variable with base64 encoded license content
+```
+docker run --rm --env PRINCE_LICENSE=PGxpY2Vuc2UgaWQ9IjAwMDAwMDEiPgogICAgPG5hbWU+Tm9uLWNvbW1lcmNpYWwgTGljZW5zZTwvbmFtZT4KICAgIDx2ZW5kb3I+WWVzTG9naWMgUHR5LiBMdGQuPC92ZW5kb3I+CiAgICA8cHJvZHVjdD5QcmuY2U8L3Byb2R1Y3Q+CiAgICA8dmVyc2lvbj5sYXRlc3Q8L3ZlcnNpb24+CiAgICA8ZW5kLXVzZXI+UGVyc29uYWwgVXNlcjwvZW5kLXVzZXI+CiAgICA8ZGF0ZT4yMDE1LTAyLTEwPC9kYXRlPgogICAgPHNpZ25hdHVyZT40MUVDQjM0QTJCOERDQjUxQjYxMjJEN0VGQkZGREE4Qjwvc2lnbmF0dXJlPgogICAgPG9wdGlvbiBpZD0iZGVtbyI+eWVzPC9vcHRpb24+CjwvbGljZW5zZT4K ardeveloppement/prince prince --help
+```
+
 [microbadger]: https://microbadger.com/images/ardeveloppement/prince
 [dockerstore]: https://store.docker.com/community/images/ardeveloppement/prince

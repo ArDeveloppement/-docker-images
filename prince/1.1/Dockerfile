@@ -24,4 +24,9 @@ RUN apk add --no-cache \
     && mkdir -p /etc/dropbear \
     && touch /var/log/lastlog
 
+COPY scripts/start.sh /root/start.sh
+RUN chmod +x /root/start.sh
+
+ENTRYPOINT ["/root/start.sh"]
+
 CMD ["/bin/sh"]
