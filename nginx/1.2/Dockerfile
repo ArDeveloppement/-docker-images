@@ -21,9 +21,8 @@ RUN apt-get update -qq && apt-get install -qqy \
 RUN rm /etc/nginx/nginx.conf \
   && rm /etc/nginx/sites-enabled/default
 
-COPY conf/nginx.conf /etc/nginx/nginx.conf
-COPY conf/default.conf /etc/nginx/sites-available/default.conf
-COPY conf/silex.conf /etc/nginx/sites-available/silex.conf
+COPY conf/nginx.conf      /etc/nginx
+COPY conf/sites-available /etc/nginx/sites-available
 
 RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
 
