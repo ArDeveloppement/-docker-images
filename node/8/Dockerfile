@@ -1,4 +1,4 @@
-FROM node:8.10
+FROM node:8-alpine
 
 RUN apt-get update && apt-get install -yyq \
   sudo \
