@@ -23,13 +23,8 @@ RUN curl --location https://github.com/jwilder/dockerize/releases/download/v${DO
         tar xvz -C /usr/bin && chown root:root /usr/bin/dockerize
 
 # Nginx and sites configuration
-RUN rm /etc/nginx/nginx.conf \
-  && rm /etc/nginx/sites-enabled/default
-
-COPY conf/nginx.conf      /etc/nginx
+COPY conf/nginx.conf      /etc/nginx/nginx.conf
 COPY conf/sites-available /etc/nginx/sites-available
-
-RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
 
 # Sources
 WORKDIR /var/www/html

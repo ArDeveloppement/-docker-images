@@ -4,13 +4,14 @@ dockerize -template /etc/nginx/nginx.conf:/etc/nginx/nginx.conf
 dockerize -template /etc/nginx/sites-available:/etc/nginx/sites-available
 
 if [ "$IS_SILEX" == "true" ]; then
-  echo " SILEX PROJECT AND NGINX CONF"
-  cat /etc/nginx/sites-available/silex.conf > /etc/nginx/sites-available/default.conf
+  echo "SILEX PROJECT AND NGINX CONF"
+  ln -sf /etc/nginx/sites-available/silex.conf /etc/nginx/sites-enabled/default
 elif [ "$IS_HTML" == "true" ]; then
-  echo " HTML PROJECT AND NGINX CONF"
-  cat /etc/nginx/sites-available/html.conf > /etc/nginx/sites-available/default.conf
+  echo "HTML PROJECT AND NGINX CONF"
+  ln -sf /etc/nginx/sites-available/html.conf /etc/nginx/sites-enabled/default
 else
-  echo "SYMFONY PROJECT AND NGINX CONF (Nothing to do because default file is for SF)"
+  echo "SYMFONY 4 PROJECT AND NGINX CONF"
+  ln -sf /etc/nginx/sites-available/symfony_4.conf /etc/nginx/sites-enabled/default
 fi
 
 exec "$@"
