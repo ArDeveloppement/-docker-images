@@ -32,6 +32,7 @@ RUN apk add --no-cache --virtual .persistent-deps \
     libzip-dev \
     zip \
     make \
+    gettext \
     # Lightweight ssh client to ensure low-cost services communications
     dropbear-ssh
 
