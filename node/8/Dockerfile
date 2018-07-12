@@ -4,4 +4,6 @@ FROM node:8-alpine
 RUN apk add --no-cache \
         sudo make gettext
 
+WORKDIR /srv/app
+
 CMD ["sh"]
