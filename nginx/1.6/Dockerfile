@@ -39,7 +39,6 @@ VOLUME ["/var/log/nginx"]
 EXPOSE 80 443
 
 COPY scripts/start.sh /root/start.sh
-RUN chmod +x /root/start.sh
 
 ENTRYPOINT ["/root/start.sh"]
 
