@@ -6,4 +6,4 @@ RUN apt-get update && apt-get install -yyq \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
   && userdel -r node
 
-CMD ["bash"]
+CMD ["sh"]
