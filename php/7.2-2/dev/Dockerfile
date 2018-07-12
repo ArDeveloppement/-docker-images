@@ -11,7 +11,6 @@ ENV PHPIZE_DEPS \
     gcc \
     libc-dev \
     pcre-dev \
-    make \
     pkgconf \
     re2c
 
