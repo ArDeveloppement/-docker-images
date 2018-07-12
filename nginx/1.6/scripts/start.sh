@@ -9,6 +9,9 @@ if [ "$IS_SILEX" == "true" ]; then
 elif [ "$IS_HTML" == "true" ]; then
   echo "HTML PROJECT AND NGINX CONF"
   ln -sf /etc/nginx/sites-available/html.conf /etc/nginx/sites-enabled/default
+elif [ "$IS_SYMFONY_2" == "true" ]; then
+  echo "SYMFONY 2 PROJECT AND NGINX CONF"
+  ln -sf /etc/nginx/sites-available/symfony_2.conf /etc/nginx/sites-enabled/default
 else
   echo "SYMFONY 4 PROJECT AND NGINX CONF"
   ln -sf /etc/nginx/sites-available/symfony_4.conf /etc/nginx/sites-enabled/default
