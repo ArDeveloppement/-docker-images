@@ -1,4 +1,17 @@
+####################
+# Stage - Composer #
+####################
+
+FROM ardeveloppement/composer:2.1 as composer
+
+#########
+# Final #
+#########
+
 FROM php:7.2-fpm-alpine
+
+# Composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 # persistent / runtime deps
 ENV PHPIZE_DEPS \
