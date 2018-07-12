@@ -1,4 +1,4 @@
-FROM ardeveloppement/php:7.2-1
+FROM ardeveloppement/php:7.2-2
 
 ENV XDEBUG_VERSION=2.6.0
 
