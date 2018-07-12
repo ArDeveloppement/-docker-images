@@ -1,8 +1,7 @@
 FROM node:8-alpine
 
-RUN apt-get update && apt-get install -yyq \
-  sudo \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# Dependencies
+RUN apk add --no-cache \
+        sudo
 
 CMD ["sh"]
