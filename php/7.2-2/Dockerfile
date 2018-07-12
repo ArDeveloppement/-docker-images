@@ -1,4 +1,4 @@
-FROM php:7.2-fpm-alpine3.7
+FROM php:7.2-fpm-alpine
 
 # persistent / runtime deps
 ENV PHPIZE_DEPS \
