@@ -1,4 +1,4 @@
-FROM debian:8.5
+FROM debian:8
 
 ENV SYMFONY_ENV prod
 ENV PROJECT_ENV prod
