@@ -98,7 +98,8 @@ RUN docker-php-ext-configure zip --with-libzip \
 RUN apk del .build-deps \
  && rm -rf /var/cache/apk/*
 
-COPY conf/php.ini /usr/local/etc/php/php.ini
+COPY conf/php.ini      /usr/local/etc/php
+COPY conf/php-fpm.conf /usr/local/etc/php-fpm.d
 
 COPY scripts/start.sh /root/start.sh
 RUN chmod +x /root/start.sh
