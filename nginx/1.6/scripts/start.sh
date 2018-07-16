@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-dockerize -template /etc/nginx/nginx.conf:/etc/nginx/nginx.conf
-dockerize -template /etc/nginx/sites-available:/etc/nginx/sites-available
+dockerize -template /root/conf/nginx.conf:/etc/nginx/nginx.conf
+dockerize -template /root/conf/sites-available:/etc/nginx/sites-available
 
 if [ "$IS_SILEX" == "true" ]; then
   echo "SILEX PROJECT AND NGINX CONF"
