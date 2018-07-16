@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 dockerize -template /etc/nginx/nginx.conf:/etc/nginx/nginx.conf
 dockerize -template /etc/nginx/sites-available:/etc/nginx/sites-available
@@ -15,6 +16,11 @@ elif [ "$IS_SYMFONY_2" == "true" ]; then
 else
   echo "SYMFONY 4 PROJECT AND NGINX CONF"
   ln -sf /etc/nginx/sites-available/symfony_4.conf /etc/nginx/sites-enabled/default
+fi
+
+# first arg is an option (`-f` or `--foo-bar`)
+if [ "${1#-}" != "$1" ]; then
+    set -- nginx "$@"
 fi
 
 exec "$@"
