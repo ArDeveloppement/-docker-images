@@ -22,20 +22,16 @@ ENV DOCKERIZE_VERSION 0.6.1
 RUN curl --location https://github.com/jwilder/dockerize/releases/download/v${DOCKERIZE_VERSION}/dockerize-linux-amd64-v${DOCKERIZE_VERSION}.tar.gz | \
         tar xvz -C /usr/bin && chown root:root /usr/bin/dockerize
 
-# Nginx and sites configuration
-COPY conf/nginx.conf      /etc/nginx/nginx.conf
-COPY conf/sites-available /etc/nginx/sites-available
+# Nginx scripts and config
+COPY scripts /root/scripts
+COPY conf    /root/conf
 
 # Sources
 WORKDIR /var/www/html
 
-VOLUME ["/var/log/nginx"]
-
 EXPOSE 80 443
 
-COPY scripts/start.sh /root/start.sh
-
-ENTRYPOINT ["/root/start.sh"]
+ENTRYPOINT ["/root/scripts/start.sh"]
 
 STOPSIGNAL SIGTERM
 
