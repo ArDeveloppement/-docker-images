@@ -98,6 +98,11 @@ RUN docker-php-ext-configure zip --with-libzip \
 RUN apk del .build-deps \
  && rm -rf /var/cache/apk/*
 
+# Dockerize
+ENV DOCKERIZE_VERSION 0.6.1
+RUN curl --location https://github.com/jwilder/dockerize/releases/download/v${DOCKERIZE_VERSION}/dockerize-alpine-linux-amd64-v${DOCKERIZE_VERSION}.tar.gz | \
+        tar xvz -C /usr/bin && chown root:root /usr/bin/dockerize
+
 COPY conf/php.ini      /usr/local/etc/php
 COPY conf/php-fpm.conf /usr/local/etc/php-fpm.d
 

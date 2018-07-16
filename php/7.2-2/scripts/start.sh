@@ -1,5 +1,8 @@
 #!/bin/sh
 
+dockerize -template /usr/local/etc/php/php.ini:/usr/local/etc/php/php.ini
+dockerize -template /usr/local/etc/php-fpm.d/php-fpm.conf:/usr/local/etc/php-fpm.d/php-fpm.conf
+
 if [ "$@" == "php-fpm" ]; then
 	# Workaround for bug in php-fpm which prefixes and truncate output to logging: https://bugs.php.net/bug.php?id=71880
 	# See: https://github.com/php/php-src/pull/1076#issuecomment-363676077
