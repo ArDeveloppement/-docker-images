@@ -1,8 +1,8 @@
 #!/bin/sh
 set -e
 
-dockerize -template /usr/local/etc/php/php.ini:/usr/local/etc/php/php.ini
-dockerize -template /usr/local/etc/php-fpm.d/php-fpm.conf:/usr/local/etc/php-fpm.d/php-fpm.conf
+dockerize -template /root/conf/php.ini:/usr/local/etc/php/php.ini
+dockerize -template /root/conf/php-fpm.conf:/usr/local/etc/php-fpm.d/php-fpm.conf
 
 # first arg is an option (`-f` or `--foo-bar`)
 if [ "${1#-}" != "$1" ]; then

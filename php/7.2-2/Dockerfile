@@ -103,12 +103,10 @@ ENV DOCKERIZE_VERSION 0.6.1
 RUN curl --location https://github.com/jwilder/dockerize/releases/download/v${DOCKERIZE_VERSION}/dockerize-alpine-linux-amd64-v${DOCKERIZE_VERSION}.tar.gz | \
         tar xvz -C /usr/bin && chown root:root /usr/bin/dockerize
 
-# Php configuration
-COPY conf/php.ini      /usr/local/etc/php
-COPY conf/php-fpm.conf /usr/local/etc/php-fpm.d
+# Php scripts and config
+COPY scripts /root/scripts
+COPY conf    /root/conf
 
-COPY scripts/start.sh /root/start.sh
-
-ENTRYPOINT ["/root/start.sh"]
+ENTRYPOINT ["/root/scripts/start.sh"]
 
 CMD ["php-fpm"]
