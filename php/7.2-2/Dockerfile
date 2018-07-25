@@ -20,7 +20,6 @@ ENV PHPIZE_DEPS \
     file \
     g++ \
     gcc \
-    git \
     libc-dev \
     pcre-dev \
     pkgconf \
@@ -46,6 +45,7 @@ RUN apk add --no-cache --virtual .persistent-deps \
     zip \
     make \
     gettext \
+    git \
     # Lightweight ssh client to ensure low-cost services communications
     dropbear-ssh
 
