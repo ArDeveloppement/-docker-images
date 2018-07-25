@@ -20,6 +20,7 @@ ENV PHPIZE_DEPS \
     file \
     g++ \
     gcc \
+    git \
     libc-dev \
     pcre-dev \
     pkgconf \
