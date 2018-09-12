@@ -2,7 +2,7 @@ FROM node:8-alpine
 
 # Dependencies
 RUN apk add --no-cache \
-        sudo make gettext
+        sudo git make gettext
 
 WORKDIR /srv/app
 
