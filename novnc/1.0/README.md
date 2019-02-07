@@ -8,8 +8,11 @@ Two environment variables exist in the docker file for configuration REMOTE_HOST
 
 ### Variables
 
+!! Ces variables ne fonctionnent pas, car le fichier launch.sh, les utilisant, 
+ne les prend pas en compte !!
+
 **REMOTE_HOST** Host running a VNC Server to connect to - defaults to *localhost*
-**REMOTE_PORT** Port that the VNC Server is listening on - defaults to *5900*
+**REMOTE_PORT** Port that the VNC Server is listening on - defaults to *5900* 
 
 ### Ports
 **8081** is exposed by default.

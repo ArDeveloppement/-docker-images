@@ -18,7 +18,10 @@ RUN apk --update --upgrade add git bash supervisor nodejs nodejs-npm \
 	&& npm install npm@latest \
 	&& npm install \
 	&& ./utils/use_require.js --as commonjs --with-app \
-	&& cp /root/noVNC/node_modules/requirejs/require.js /root/noVNC/build \
+	&& cp /root/noVNC/node_modules/requirejs/require.js /root/noVNC/build
+
+RUN cd /root/noVNC/build \
+	&& ln -s /root/noVNC/build/vnc.html index.html \
 	&& sed -i -- "s/ps -p/ps -o pid | grep/g" /root/noVNC/utils/launch.sh \
 	&& apk del git nodejs-npm nodejs
 
