@@ -4,15 +4,18 @@ This image is intended to run a small standalone server that can target either o
 
 ## Configuration
 
-Two environment variables exist in the docker file for configuration REMOTE_HOST and REMOTE_PORT.
+Two environment variables exist in the docker file for configuration `REMOTE_HOST` and `REMOTE_PORT`.
 
 ### Variables
 
-!! Ces variables ne fonctionnent pas, car le fichier launch.sh, les utilisant, 
-ne les prend pas en compte !!
+ > **Bug** : ***Those env variables don't work because the `launch.sh`, using them, 
+ nothing happen on the client side***
+
 
 **REMOTE_HOST** Host running a VNC Server to connect to - defaults to *localhost*
 **REMOTE_PORT** Port that the VNC Server is listening on - defaults to *5900* 
+**STDOUT_LOGFILE** 
+**STDOUT_LOGFILE_MAXBYTES**
 
 ### Ports
 **8081** is exposed by default.

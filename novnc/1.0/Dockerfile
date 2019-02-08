@@ -7,7 +7,9 @@ ENV HOME=/root \
 	LANGUAGE=en_US.UTF-8 \
 	LC_ALL=C.UTF-8 \
 	REMOTE_HOST=localhost \
-	REMOTE_PORT=5900
+	REMOTE_PORT=5900 \
+	STDOUT_LOGFILE=/dev/stdout \
+	STDOUT_LOGFILE_MAXBYTES=0
 
 RUN apk --update --upgrade add git bash supervisor nodejs nodejs-npm \
 	&& git clone https://github.com/novnc/noVNC.git /root/noVNC \
@@ -20,6 +22,7 @@ RUN apk --update --upgrade add git bash supervisor nodejs nodejs-npm \
 	&& ./utils/use_require.js --as commonjs --with-app \
 	&& cp /root/noVNC/node_modules/requirejs/require.js /root/noVNC/build
 
+# We add a symlink in order to access the home page directly on "/"
 RUN cd /root/noVNC/build \
 	&& ln -s /root/noVNC/build/vnc.html index.html \
 	&& sed -i -- "s/ps -p/ps -o pid | grep/g" /root/noVNC/utils/launch.sh \
