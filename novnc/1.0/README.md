@@ -14,8 +14,8 @@ Two environment variables exist in the docker file for configuration `REMOTE_HOS
 
 **REMOTE_HOST** Host running a VNC Server to connect to - defaults to *localhost*
 **REMOTE_PORT** Port that the VNC Server is listening on - defaults to *5900* 
-**STDOUT_LOGFILE** 
-**STDOUT_LOGFILE_MAXBYTES**
+**STDOUT_LOGFILE** Log file output for supervisord
+**STDOUT_LOGFILE_MAXBYTES** Log file size output, set to 0 in order to avoid an error
 
 ### Ports
 **8081** is exposed by default.
