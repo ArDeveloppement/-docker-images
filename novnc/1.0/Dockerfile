@@ -28,7 +28,7 @@ RUN cd /root/noVNC/build \
 	&& sed -i -- "s/ps -p/ps -o pid | grep/g" /root/noVNC/utils/launch.sh \
 	&& apk del git nodejs-npm nodejs
 
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY conf/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 EXPOSE 8081
 
