@@ -1,6 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 [![Docker Layers](https://images.microbadger.com/badges/image/ardeveloppement/prince.svg)][microbadger]
-[![Docker Build Status](https://img.shields.io/docker/build/ardeveloppement/prince.svg)][dockerstore]
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/ardeveloppement/prince.svg)][dockerstore]
 
 * `latest`, `1.2` [(prince/1.2/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/prince/1.2/Dockerfile)
 * `1.2` [(prince/1.2/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/prince/1.2/Dockerfile)

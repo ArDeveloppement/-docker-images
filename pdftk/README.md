@@ -1,6 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 [![Docker Layers](https://images.microbadger.com/badges/image/ardeveloppement/pdftk.svg)][microbadger]
-[![Docker Build Status](https://img.shields.io/docker/build/ardeveloppement/pdftk.svg)][dockerstore]
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/ardeveloppement/pdftk.svg)][dockerstore]
 
 * `latest`, `2.02` [(pdftk/2.02/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/pdftk/2.02/Dockerfile)
 * `2.02` [(pdftk/2.02/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/pdftk/2.02/Dockerfile)

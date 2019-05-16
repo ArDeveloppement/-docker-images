@@ -1,6 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 [![Docker Layers](https://images.microbadger.com/badges/image/ardeveloppement/php.svg)][microbadger]
-[![Docker Build Status](https://img.shields.io/docker/build/ardeveloppement/php.svg)][dockerstore]
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/ardeveloppement/php.svg)][dockerstore]
 
 * `latest`, `7.2-2` [(Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/php/7.2-2/Dockerfile), `7.2-2-dev` [(Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/php/7.2-2/dev/Dockerfile) (PHP 7)
 * `7.2-1` [(Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/php/7.2-1/Dockerfile), `7.2-1-dev` [(Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/php/7.2-1/dev/Dockerfile) (PHP 7)

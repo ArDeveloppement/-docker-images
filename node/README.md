@@ -1,7 +1,7 @@
 # Supported tags and respective `Dockerfile` links
 
 [![Docker Layers](https://images.microbadger.com/badges/image/ardeveloppement/node.svg)][microbadger]
-[![Docker Build Status](https://img.shields.io/docker/build/ardeveloppement/node.svg)][dockerstore]
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/ardeveloppement/node.svg)][dockerstore]
 
 * `latest`, `8-1` [(node/8-1/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/node/8-1/Dockerfile)
 * `8` [(node/8/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/node/8/Dockerfile)

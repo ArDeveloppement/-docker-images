@@ -1,6 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 [![Docker Layers](https://images.microbadger.com/badges/image/ardeveloppement/composer.svg)][microbadger]
-[![Docker Build Status](https://img.shields.io/docker/build/ardeveloppement/composer.svg)][dockerstore]
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/ardeveloppement/composer.svg)][dockerstore]
 
 * `latest`, `2.1` [(composer/2.1/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/composer/2.1/Dockerfile)
 * `2.0` [(composer/2.0/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/composer/2.0/Dockerfile)

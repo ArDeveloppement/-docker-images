@@ -1,6 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 [![Docker Layers](https://images.microbadger.com/badges/image/ardeveloppement/nginx.svg)][microbadger]
-[![Docker Build Status](https://img.shields.io/docker/build/ardeveloppement/nginx.svg)][dockerstore]
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/ardeveloppement/nginx.svg)][dockerstore]
 
 * `latest`, `1.6` [(nginx/1.6/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/nginx/1.6/Dockerfile)
 * `1.2` [(nginx/1.2/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/nginx/1.2/Dockerfile)
