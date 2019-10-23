@@ -1,6 +1,6 @@
 # Supported tags and respective `Dockerfile` links
-[![Docker Layers][microbadger]]
-[![Docker Build Status][dockerstore]]
+[![Docker Layers](https://images.microbadger.com/badges/image/ardeveloppement/deployer.svg)][microbadger]
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/ardeveloppement/deployer.svg)][dockerstore]
 
 * `latest`, `6.3` [(deployer/6.3/Dockerfile)](https://github.com/ArDeveloppement/docker-images/blob/master/deployer/6.3/Dockerfile)
 
