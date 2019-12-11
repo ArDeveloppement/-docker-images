@@ -21,5 +21,5 @@ if [[ -n ${USER_ID} || -n ${GROUP_ID} ]]; then
 fi
 
 #exec su-exec azure_sync /usr/bin/rsync "$@"
-exec su-exec azure_sync /bin/ash
+exec su-exec azure_sync "$@"
 
