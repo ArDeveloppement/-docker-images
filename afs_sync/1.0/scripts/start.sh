@@ -20,4 +20,6 @@ if [[ ! -z ${USER_ID} || ! -z ${GROUP_ID} ]]; then
     fi
 fi
 
-exec su-exec azure_sync /usr/bin/rsync "$@"
+#exec su-exec azure_sync /usr/bin/rsync "$@"
+exec su-exec azure_sync /bin/ash
+
