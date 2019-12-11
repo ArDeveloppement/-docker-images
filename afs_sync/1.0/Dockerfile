@@ -16,7 +16,7 @@ RUN cd /tmp \
     && curl -sSL https://aka.ms/downloadazcopy-${AZCOPY_VERSION}-${AZCOPY_ARCH} \
         -o azcopy.tar \
     && tar -xvf azcopy.tar \
-    && mv /tmp/azcopy_${AZCOPY_ARCH}linux_amd64*/azcopy /usr/bin \
+    && mv /tmp/azcopy_${AZCOPY_ARCH}_amd64*/azcopy /usr/bin \
     && rm -r /tmp/azcopy*
 
 # Links for SSH private key
