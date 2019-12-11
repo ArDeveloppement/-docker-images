@@ -6,10 +6,10 @@ ENV AZCOPY_VERSION=v10
 ENV AZCOPY_ARCH=linux
 
 RUN apk update \
-    && apk -U add --no-cache ca-certificates fuse openssl curl su-exec rsync openssh-client bash \
+    && apk -U add --no-cache ca-certificates fuse openssl curl su-exec rsync openssh-client \
     && rm -rf /var/cache/apk/* \
     && addgroup azure_sync \
-    && adduser -h /config -s /bin/bash -G azure_sync -D azure_sync
+    && adduser -h /config -s /bin/ash -G azure_sync -D azure_sync
 
 # azcopy
 RUN cd /tmp \
