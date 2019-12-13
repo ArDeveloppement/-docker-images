@@ -6,15 +6,26 @@
 
 Simple image to use `rsync` and/or `azcopy` to synchronize data with Azure Files.
 
-## Volumes
+# Volumes
 
 - `/config`: home directory for `afs_sync` user. Used to map ssh keys.
 - `/data`: directory where files will be synchrinized.
 
-## Env vars
+# Environment variables
+You can override `uid` and `gid` of the user by passing new values with `--env` option.
 
-- `USER_ID`: Change user id of `afs_sync` system user.
-- `GROUP_ID`: Change group id of `afs_sync` system user.
+	docker run -i \
+		-v `pwd`:/data \
+		-v ~/.ssh:/config/.ssh \
+		-e USER_ID=`id -u` \
+		-e GROUP_ID=`id -g` \
+	    -t ardeveloppement/afs-sync \
+	    rsync --version
+
+Default values are:
+
+* `USER_ID`: 1000
+* `GROUP_ID`: 1000
 
 [microbadger]: https://microbadger.com/images/ardeveloppement/afs-sync
 [dockerstore]: https://store.docker.com/community/images/ardeveloppement/afs-sync
