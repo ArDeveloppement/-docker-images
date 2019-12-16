@@ -26,6 +26,9 @@ RUN cd /tmp \
     && mv /tmp/azcopy_${AZCOPY_ARCH}_amd64*/azcopy /usr/bin \
     && rm -r /tmp/azcopy*
 
+RUN mkdir /data \
+    && chown -R azure_sync:azure_sync /data
+
 # Links for SSH private key
 
 VOLUME ["/config", "/data"]
