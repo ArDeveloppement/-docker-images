@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.11
 
 LABEL maintainer="AR Developpement <support-arconnect@cospirit.com>"
 
