@@ -41,10 +41,11 @@ All ICC profiles are located in `/usr/lib/prince/icc`.
 
 - Prince default profiles
 - Coated_Fogra39L_VIGC_300.icc
+- ISOcoated_v2_300_eci.icc
 
 Extra can be added by setting a volume on `/usr/lib/prince/icc/custom`.
 
-ICC profile files can be downloaded from [www.color.org](http://www.color.org/registry/index.xalter).
+ICC profile files can be downloaded from [www.color.org](http://www.color.org/registry/index.xalter) or [ECI website](http://www.eci.org/en/downloads).
 
 [microbadger]: https://microbadger.com/images/ardeveloppement/prince
 [dockerstore]: https://store.docker.com/community/images/ardeveloppement/prince
