@@ -7,6 +7,7 @@ ENV AZCOPY_ARCH=linux
 
 RUN apk update \
     && apk -U add --no-cache ca-certificates fuse openssl curl su-exec rsync openssh-client bash \
+    && apk -U add --no-cache ca-certificates libc6-compat libunwind \
     && rm -rf /var/cache/apk/* \
     && addgroup azure_sync \
     && adduser -h /config -s /bin/bash -G azure_sync -D azure_sync
@@ -17,7 +18,9 @@ RUN cd /tmp \
         -o azcopy.tar \
     && tar -xvf azcopy.tar \
     && mv /tmp/azcopy_${AZCOPY_ARCH}_amd64*/azcopy /usr/bin \
-    && rm -r /tmp/azcopy*
+    && rm -r /tmp/azcopy* \
+    && chmod 755 /usr/bin/azcopy \
+    && chown root.root /usr/bin/azcopy
 
 # Links for SSH private key
 
